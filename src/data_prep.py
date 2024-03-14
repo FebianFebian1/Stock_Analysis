@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from datetime import datetime
 
 def data_date(data):
     date = np.array(data['Date'])
@@ -22,3 +23,7 @@ def float_price(closing_price):
     for i in range(len(closing_price)):
         closing_price[i] = float(closing_price[i].replace('$', ''))
     return closing_price, period_length
+
+def data_numeric_date(data):
+    date = [datetime.strptime(i, '%m/%d/%Y') for i in data]
+    return date
