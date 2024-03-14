@@ -9,6 +9,10 @@ def data_closing_price(data):
     closing_price = np.array(data['Close/Last'])
     return closing_price
 
+def data_volume(data):
+    volume = np.array(data['Volume'])
+    return volume
+
 def reverse_list(data):
     return data[::-1]
 
