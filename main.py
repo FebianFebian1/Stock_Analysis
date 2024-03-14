@@ -1,10 +1,13 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from src.data_prep import float_price, data_date, data_closing_price
+from src.data_prep import float_price, data_date, data_closing_price, reverse_list
 
 # Load the data
-data = pd.read_csv('src/HistData5Y_walmart.csv')
+# data = pd.read_csv('src/HistData5Y_walmart.csv')
+data = pd.read_csv('src/HistData5Y_apple.csv')
+
+data = reverse_list(data)
 
 #collect the date column and the closing price column
 date = data_date(data)
