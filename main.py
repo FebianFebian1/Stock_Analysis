@@ -21,15 +21,16 @@ volume = data_volume(data)
 
 #convert the closing price to a float
 closing_price, period_length = float_price(closing_price)
-
+numeric_date = data_numeric_date(date)
 
 
 #plot the data
 plt.figure()
-plt.plot(period_length[100:1000], closing_price[100:1000])
+plt.plot(numeric_date, closing_price)
 plt.xlabel('Date')
 plt.ylabel('Closing Price')
 plt.title('Walmart Stock Price')
+plt.show()
 
 # fft closing price
 # plt.figure()
