@@ -9,6 +9,9 @@ def data_closing_price(data):
     closing_price = np.array(data['Close/Last'])
     return closing_price
 
+def reverse_list(data):
+    return data[::-1]
+
 def float_price(closing_price):
     period_length = np.arange(1,len(closing_price)+1)
 
