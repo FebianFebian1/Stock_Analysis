@@ -48,6 +48,15 @@ model.fit(X_train, y_train)
 # Make predictions
 y_pred = model.predict(X_test)
 
+# Plot the results
+plt.figure()
+plt.scatter(X_test, y_test, color='black')
+plt.plot(X_test, y_pred, color='blue', linewidth=3)
+plt.title('Linear Regression')
+plt.xlabel('Date')
+plt.ylabel('Closing Price')
+plt.show()
+
 # fft closing price
 # plt.figure()
 # closing_price_fft = np.fft.fft(closing_price)
