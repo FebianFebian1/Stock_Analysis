@@ -18,11 +18,9 @@ def reverse_list(data):
     return data[::-1]
 
 def float_price(closing_price):
-    period_length = np.arange(1,len(closing_price)+1)
-
     for i in range(len(closing_price)):
         closing_price[i] = float(closing_price[i].replace('$', ''))
-    return closing_price, period_length
+    return closing_price
 
 def data_numeric_date(data):
     date = [datetime.strptime(i, '%m/%d/%Y') for i in data]
