@@ -1,23 +1,20 @@
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from src.data_prep import *
-from src.PlotStockTrend import *
-from src.StockLinearRegression import *
 
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
+from src.data_prep import stock_data
+from src.StockLinearRegression import ML_analysis
+
 
 # Load the data
 # data = pd.read_csv('src/HistData5Y_walmart.csv')
 data = pd.read_csv('src/HistData5Y_apple.csv')
 
 # Plot the stock trend
-PlotStockTrend(data)
+stock = stock_data(data)
+stock.volume_date()
 
 # Linear Regression
-StockLinearRegression(data)
+stock_analysis = ML_analysis(data)
+stock_analysis.StockLinearRegression()
 
 
 # fft closing price
