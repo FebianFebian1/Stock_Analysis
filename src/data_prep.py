@@ -1,9 +1,10 @@
-import pandas as pd
+# This file contains the class Data_prep which is used to prepare the data for analysis
+# The source for the data are taken from NASDAQ donwloaded csv files. 
 import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime
 
-class stock_data:
+class Data_prep:
 
     def __init__(self, data):
         self.data = data[::-1]
@@ -25,19 +26,25 @@ class stock_data:
         return date, closing_price, volume
     
     def price_date(self):
+        '''
+        Plot the closing price of the stock against the date
+        '''
         plt.figure()
         plt.plot(self.date, self.closing_price)
         plt.xlabel('Date')
         plt.ylabel('Closing Price')
-        plt.title('Walmart Stock Price')
+        plt.title('Stock Price against Date')
         plt.show()
 
     def volume_date(self):
+        '''
+        Plot the volume of the stock against the date
+        '''
         plt.figure()
         plt.plot(self.date, self.volume)
         plt.xlabel('Date')
         plt.ylabel('Volume')
-        plt.title('Walmart Stock Price')
+        plt.title('Stock Volume against Date')
         plt.show()
 
 

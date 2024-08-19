@@ -1,11 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from src.data_prep import stock_data
+from src.data_prep import Data_prep
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
-class ML_analysis(stock_data):
+class ML_analysis(Data_prep):
     def __init__(self, data):
         super().__init__(data)
 
